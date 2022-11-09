@@ -42,16 +42,16 @@ public class LoginPage {
     public void verifyLogin(String msg, String option){
         switch (option){
             case "1": //happy case
-                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,30),msg);
+                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().trim().substring(0,30), msg.trim());
                 break;
             case "2": //invalid username
-                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,25),msg);
+                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,25), msg.trim());
                 break;
             case "3": //invalid password
-                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,30),msg);
+                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,30), msg.trim());
                 break;
             default: //blank
-                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,30),msg);
+                Assert.assertEquals(webUI.getElement(verifyLoginLbl).getText().substring(0,30), msg.trim());
                 break;
         }
     }
